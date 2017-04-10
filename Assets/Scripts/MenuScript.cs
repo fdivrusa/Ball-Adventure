@@ -32,7 +32,7 @@ public class MenuScript : MonoBehaviour
         SceneManager.LoadScene(levelsSelection);
     }
 
-    public void quit() //Quit the game
+    public void QuitGame() //Quit the game
     {
         Application.Quit();
     }
