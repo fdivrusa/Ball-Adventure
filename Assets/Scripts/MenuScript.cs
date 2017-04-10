@@ -17,19 +17,19 @@ public class MenuScript : MonoBehaviour
         }
     }
 
-    public void LoadLevel(string level) //Load last finished level
+    public void LoadLevel() //Load last finished level
     {
         SceneManager.LoadScene(lastLevel);
     }
 
-    public void Settings(string settings) //Open the settings menu (Luminiosity and sound)
+    public void Settings() //Open the settings menu (Luminiosity and sound)
     {
-        SceneManager.LoadScene(settings);
+        SceneManager.LoadScene("Settings");
     }
 
-    public void LevelsSelection(string levelsSelection) //Launch the levels selection menu
+    public void LevelsSelection() //Launch the levels selection menu
     {
-        SceneManager.LoadScene(levelsSelection);
+        SceneManager.LoadScene("LevelsSelection");
     }
 
     public void QuitGame() //Quit the game

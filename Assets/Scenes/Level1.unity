@@ -1045,6 +1045,7 @@ GameObject:
   - component: {fileID: 1946600240}
   - component: {fileID: 1946600239}
   - component: {fileID: 1946600238}
+  - component: {fileID: 1946600244}
   m_Layer: 0
   m_Name: PlayerCamera
   m_TagString: Untagged
@@ -1093,7 +1094,7 @@ Camera:
   m_GameObject: {fileID: 1946600237}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -1132,6 +1133,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!45 &1946600244
+Skybox:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1946600237}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: e980bc7fbb00dc34b86b95ac842d1920, type: 2}
 --- !u!1001 &2007418791
 Prefab:
   m_ObjectHideFlags: 0

@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 56}
   - component: {fileID: 55}
   - component: {fileID: 15}
+  - component: {fileID: 16}
   m_Layer: 0
   m_Name: PlayerCamera
   m_TagString: Untagged
@@ -235,6 +236,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 5}
+--- !u!45 &16
+Skybox:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 3}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: 966766f4829d6ad419eaaf7cf0712f85, type: 2}
 --- !u!1 &17
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,7 +407,7 @@ Camera:
   m_GameObject: {fileID: 3}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
