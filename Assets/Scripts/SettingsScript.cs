@@ -9,6 +9,15 @@ public class SettingsScript : MonoBehaviour
     public Canvas confirmationCanvas;
     public Canvas settingsCanvas;
 
+
+    public void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape)) //If user press the back button
+        {
+            SceneManager.LoadScene("Menu"); //Return to menu
+        }
+    }
+
     public void Awake() //At the beginning, confirmationCanvas is disable
     {
         NoReset();
