@@ -10,6 +10,9 @@ public class MenuScript : MonoBehaviour
 
     public void Start()
     {
+
+        Screen.orientation = ScreenOrientation.Portrait; //I only allowed portrait orientation
+    
         lastLevel = PlayerPrefs.GetString("lastLevel");
         if (lastLevel == "" || lastLevel == null)
         {
@@ -22,7 +25,7 @@ public class MenuScript : MonoBehaviour
         SceneManager.LoadScene(lastLevel);
     }
 
-    public void Settings() //Open the settings menu (Luminiosity and sound)
+    public void Settings() //Open the settings menu (Luminiosity, sound and "reset the game")
     {
         SceneManager.LoadScene("Settings");
     }
