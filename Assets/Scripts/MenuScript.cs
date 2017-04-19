@@ -10,7 +10,6 @@ public class MenuScript : MonoBehaviour
 
     public void Start()
     {
-
         Screen.orientation = ScreenOrientation.Portrait; //I only allowed portrait orientation
     
         lastLevel = PlayerPrefs.GetString("lastLevel");
@@ -20,12 +19,12 @@ public class MenuScript : MonoBehaviour
         }
     }
 
-    public void LoadLevel() //Load last finished level
+    public void LoadLevel() //Load last finished level with a fade
     {
-        SceneManager.LoadScene(lastLevel);
+        Initiate.Fade(lastLevel, Color.black, 0.8f);
     }
 
-    public void Settings() //Open the settings menu (Luminiosity, sound and "reset the game")
+    public void Settings() //Open the settings menu ("reset the game" and "about")
     {
         SceneManager.LoadScene("Settings");
     }

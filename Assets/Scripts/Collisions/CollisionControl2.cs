@@ -9,7 +9,7 @@ public class CollisionControl2 : MonoBehaviour {
         {
             PlayerPrefs.SetString("lastLevel", "Level3"); //We save that the player finished the secondLevel
             gameObject.SetActive(false);
-            Invoke("NextLevel", 3); //Launching next level after 3 seconds
+            Initiate.Fade("Level3", Color.black, 0.8f);
         }
     }
 

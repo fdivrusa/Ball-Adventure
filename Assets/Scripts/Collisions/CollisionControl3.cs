@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class CollisionControl3 : MonoBehaviour
 {
 
-    private bool state = false; //Default : Door is close
+    private bool stateDoor = false; //Default : Door is close
     private Animator animDoor; //Door's animator
     public GameObject indicator;
     public GameObject door;
@@ -22,24 +22,24 @@ public class CollisionControl3 : MonoBehaviour
 
     public void Start()
     {
-        indicator.GetComponent<Renderer>().material.color = Color.red; 
-        animDoor = door.GetComponent<Animator>(); 
+        indicator.GetComponent<Renderer>().material.color = Color.red;
+        animDoor = door.GetComponent<Animator>();
     }
 
 
     public void OnTriggerEnter(Collider collider) //Collisions with non-solid Object (I avoid some bugs with the switch by using this function)
     {
-        if (collider.gameObject.name == "Switch" && state == false) //If player on the switch : Door opening
+        if (collider.gameObject.name == "Switch" && stateDoor == false) //If player on the switch : Door opening
         {
             indicator.GetComponent<Renderer>().material.color = Color.green; //Indicator turns green
-            state = true; //State is true (open)
-            animDoor.SetBool("IsOpen", state); //Launch of the opening animation
+            stateDoor = true; //State is true (open)
+            animDoor.SetBool("IsOpen", stateDoor); //Launch of the opening animation
         }
-        else if (collider.gameObject.name == "Switch" && state == true) //If player on the switch again : Door closing
+        else if (collider.gameObject.name == "Switch" && stateDoor == true) //If player on the switch again : Door closing
         {
             indicator.GetComponent<Renderer>().material.color = Color.red; //Indicator turns red
-            state = false;
-            animDoor.SetBool("IsOpen", state); //Launch of the closing animation 
+            stateDoor = false;
+            animDoor.SetBool("IsOpen", stateDoor); //Launch of the closing animation 
         }
         else if (collider.gameObject.name == "End")
         {
@@ -47,7 +47,6 @@ public class CollisionControl3 : MonoBehaviour
             gameObject.SetActive(false); //make the player disapear
             Invoke("NextLevel", 3); //I wait 3 seconds to lauch the next level
         }
-
     }
 
     public void OnCollisionEnter(Collision collision) //Collisions with solid object
@@ -59,7 +58,6 @@ public class CollisionControl3 : MonoBehaviour
             gameObject.SetActive(false); //I disable my player (because he is dead)
             Invoke("Restart", 3); //Calling Restart function after 3 seconds (I wait the end of the explosion)
         }
-
     }
 
     /* 
