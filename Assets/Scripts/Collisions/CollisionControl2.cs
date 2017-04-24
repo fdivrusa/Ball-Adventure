@@ -11,6 +11,11 @@ public class CollisionControl2 : MonoBehaviour {
             gameObject.SetActive(false);
             Initiate.Fade("Level3", Color.black, 0.8f);
         }
+        else if(collider.gameObject.tag == "ShrinkBonus") //If the player touch the ShrinkBonus
+        {
+            collider.gameObject.SetActive(false); //I disable the Bonus
+            gameObject.transform.localScale -= new Vector3(1, 1, 1);
+        }
     }
 
     public void NextLevel()

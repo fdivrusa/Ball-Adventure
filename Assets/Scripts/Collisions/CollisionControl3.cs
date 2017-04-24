@@ -45,7 +45,7 @@ public class CollisionControl3 : MonoBehaviour
         {
             PlayerPrefs.SetString("LastLevel", "Level4"); //I save the level
             gameObject.SetActive(false); //make the player disapear
-            Invoke("NextLevel", 3); //I wait 3 seconds to lauch the next level
+            Initiate.Fade("Level4", Color.black, 0.8f);
         }
     }
 
@@ -56,23 +56,7 @@ public class CollisionControl3 : MonoBehaviour
         {
             Instantiate(particlesExplosion, transform.position, transform.rotation); //Instantiation of the explosion
             gameObject.SetActive(false); //I disable my player (because he is dead)
-            Invoke("Restart", 3); //Calling Restart function after 3 seconds (I wait the end of the explosion)
+            Initiate.Fade("Level3", Color.red, 0.8f); //Reloading level
         }
-    }
-
-    /* 
-     * Function that reload the level
-     */
-    public void Restart()
-    {
-        SceneManager.LoadScene("Level3");
-    }
-
-    /*
-     * Function that load the next level 
-     */
-    public void NextLevel()
-    {
-        SceneManager.LoadScene("Level4");
     }
 }
