@@ -11,7 +11,7 @@ public class CollisionControl3 : MonoBehaviour
     private Animator animDoor; //Door's animator
     public GameObject indicator;
     public GameObject door;
-    public ParticleSystem particlesExplosion;
+    public GameObject particlesExplosion;
 
     //the moving bridge
     public GameObject bridge1;
@@ -24,6 +24,7 @@ public class CollisionControl3 : MonoBehaviour
     {
         indicator.GetComponent<Renderer>().material.color = Color.red;
         animDoor = door.GetComponent<Animator>();
+        particlesExplosion.SetActive(false);
     }
 
 
@@ -43,7 +44,7 @@ public class CollisionControl3 : MonoBehaviour
         }
         else if (collider.gameObject.name == "End")
         {
-            PlayerPrefs.SetString("LastLevel", "Level4"); //I save the level
+            PlayerPrefs.SetInt("lastLevel", 6); //I save the level
             gameObject.SetActive(false); //make the player disapear
             Initiate.Fade("Level4", Color.black, 0.8f);
         }
@@ -54,6 +55,7 @@ public class CollisionControl3 : MonoBehaviour
 
         if (collision.gameObject.name == "Lava") //If player touch lava : DIE !!
         {
+            particlesExplosion.SetActive(true); //I enable my particles
             Instantiate(particlesExplosion, transform.position, transform.rotation); //Instantiation of the explosion
             gameObject.SetActive(false); //I disable my player (because he is dead)
             Initiate.Fade("Level3", Color.red, 0.8f); //Reloading level

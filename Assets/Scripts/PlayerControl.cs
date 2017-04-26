@@ -12,7 +12,7 @@ public class PlayerControl : MonoBehaviour
         player = GetComponent<Rigidbody>();
     }
 
-    // Updates every second
+    // Updates every frame
     void FixedUpdate()
     {
 

@@ -6,22 +6,26 @@ using UnityEngine.SceneManagement;
 public class MenuScript : MonoBehaviour
 {
 
-    private string lastLevel;
+    private int lastLevel = 0;
 
     public void Start()
     {
         Screen.orientation = ScreenOrientation.Portrait; //I only allowed portrait orientation
-    
-        lastLevel = PlayerPrefs.GetString("lastLevel");
-        if (lastLevel == "" || lastLevel == null)
+        
+        lastLevel = PlayerPrefs.GetInt("lastLevel");
+        if (lastLevel == 0)
         {
-            lastLevel = "Level1"; //If there is no last level finished, the user plays the first level
+            lastLevel = 3; //If there is no last level finished, the user plays the first level
+            PlayerPrefs.SetInt("lastLevel", lastLevel);
         }
     }
 
     public void LoadLevel() //Load last finished level with a fade
     {
-        Initiate.Fade(lastLevel, Color.black, 0.8f);
+        //I have to do like this beacause I can't get the name of a scene by Index if the scene is not loaded
+        string path = SceneUtility.GetScenePathByBuildIndex(lastLevel);
+        string lastLevelName = path.Substring(0, path.Length - 6).Substring(path.LastIndexOf('/') + 1);
+        Initiate.Fade(lastLevelName, Color.black, 0.8f);
     }
 
     public void Settings() //Open the settings menu ("reset the game" and "about")
@@ -31,7 +35,7 @@ public class MenuScript : MonoBehaviour
 
     public void LevelsSelection() //Launch the levels selection menu
     {
-        SceneManager.LoadScene("LevelsSelection");
+        SceneManager.LoadScene("Levels");
     }
 
     public void QuitGame() //Quit the game

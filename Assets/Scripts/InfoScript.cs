@@ -19,5 +19,4 @@ public class InfoScript : MonoBehaviour
         player.SetActive(true);
         infoCanvas.enabled = false;
     }
-
 }

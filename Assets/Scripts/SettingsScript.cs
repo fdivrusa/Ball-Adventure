@@ -20,6 +20,7 @@ public class SettingsScript : MonoBehaviour
 
     public void Awake() //At the beginning, confirmationCanvas and informationsCanvas are disable
     {
+        Debug.Log(PlayerPrefs.GetInt("lastLevel"));
         NoReset();
     }
 
@@ -35,7 +36,7 @@ public class SettingsScript : MonoBehaviour
 
     public void YesReset() //If user want to reset the game
     {
-        PlayerPrefs.SetString("lastLevel", ""); //The save level is nothing
+        PlayerPrefs.SetInt("lastLevel", 3); //The save level is level 1
         SceneManager.LoadScene("Menu"); //We reload the Menu
     }
 

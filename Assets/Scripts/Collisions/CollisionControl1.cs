@@ -9,7 +9,7 @@ public class CollisionControl1 : MonoBehaviour
     {
         if (collider.gameObject.name == "End") //If the player touch the "end" object, he can play the next level 
         {
-            PlayerPrefs.SetString("lastLevel", "Level2"); //We save that the player finished the firstLevel
+            PlayerPrefs.SetInt("lastLevel", 4); //We save that the player finished the firstLevel
             gameObject.SetActive(false);
             Initiate.Fade("level2", Color.black, 0.8f); //Transition for the second level
         }
