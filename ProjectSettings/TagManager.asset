@@ -7,6 +7,7 @@ TagManager:
   - Joueur
   - ShrinkBonus
   - GrowBonus
+  - Fire
   layers:
   - Default
   - TransparentFX

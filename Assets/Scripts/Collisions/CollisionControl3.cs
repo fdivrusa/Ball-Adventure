@@ -18,8 +18,6 @@ public class CollisionControl3 : MonoBehaviour
     public GameObject bridge2;
     public GameObject bridge3;
 
-
-
     public void Start()
     {
         indicator.GetComponent<Renderer>().material.color = Color.red;

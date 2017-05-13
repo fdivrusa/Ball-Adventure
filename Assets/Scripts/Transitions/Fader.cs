@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class Fader : MonoBehaviour
 {
 
-    //SCRIPT TAKE ON THE ASSETS STORE !!!! 
+    //SCRIPT TAKE ON THE ASSETS STORE 
 
     //Public variables but not shown in the editor so I can access in other script
     [HideInInspector]

@@ -7,6 +7,8 @@ public class MenuScript : MonoBehaviour
 {
 
     private int lastLevel = 0;
+    public ParticleSystem dustParticles;
+    public AudioSource gameMusic;
 
     public void Start()
     {
@@ -18,6 +20,9 @@ public class MenuScript : MonoBehaviour
             lastLevel = 3; //If there is no last level finished, the user plays the first level
             PlayerPrefs.SetInt("lastLevel", lastLevel);
         }
+
+        DontDestroyOnLoad(dustParticles);
+        DontDestroyOnLoad(gameMusic);
     }
 
     public void LoadLevel() //Load last finished level with a fade

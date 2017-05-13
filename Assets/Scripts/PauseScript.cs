@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class PauseScript : MonoBehaviour
 {
 
-    public bool isPaused;
+    private bool isPaused;
     public Canvas pauseCanvas;
     public GameObject player; 
 
