@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CollisionControl1 : MonoBehaviour
 {
+
     public void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.name == "End") //If the player touch the "end" object, he can play the next level 
